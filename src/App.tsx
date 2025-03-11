@@ -2,10 +2,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 // import { useState } from 'react'
-import Content from './components/Content'
-import Navbar from './components/Navbar'
-import { clouds_bg } from './assets/_indexAssets';
-import { About, Tadarus, Reference } from './pages/_indexPages';
+import Content from './Components/Content'
+import Navbar from './Components/Navbar'
+import { clouds_bg } from './Assets/_indexAssets';
+import { About, Tadarus, Reference } from './Pages/_indexPages';
 
 function App() {
 
@@ -19,15 +19,15 @@ function App() {
         />
       </div>
       <main className="absolute inset-0 flex flex-col items-center justify-center">
-        <Content />
 
-        <Navbar />
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/" element={<Content />} />
           <Route path="/about" element={<About />} />
           <Route path="/tadarus" element={<Tadarus />} />
           <Route path="/reference" element={<Reference />} />
         </Routes>
+        
+        <Navbar />
       </main>
     </>
   );  

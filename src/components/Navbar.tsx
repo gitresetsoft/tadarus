@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <div className="w-full px-4 pb-6 md:pb-10 fade-in-static-2">
-      <nav className="max-w-6xl mx-auto bg-white/5 backdrop-blur-md border border-white/20 shadow-lg rounded-xl flex flex-col md:flex-row items-center justify-between p-4 md:p-6">
+      <nav className="max-w-6xl mx-auto bg-white/5 backdrop-blur-md border border-white/20 shadow-lg rounded-xl flex flex-col md:flex-row items-center justify-between p-3">
         <div className="mb-4 md:mb-0">
           {/* <Link to="/" className="flex items-center"> */}
             <span className="text-xl font-serif font-semibold text-slate-800">
@@ -24,7 +24,7 @@ export default function Navbar() {
             Tadarus
           </Link>
           <Link to="/reference" className="hover:text-slate-900">
-            Reference
+            Rujukan
           </Link>
         </div>
 

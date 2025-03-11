@@ -1,4 +1,5 @@
 import { BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Content() {
   return (
@@ -9,10 +10,12 @@ export default function Content() {
       <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-md">
         Simpan, guna, kongsi dan permudahkan urusan Tadarus anda!
       </p>
-      <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-md flex items-center transition-colors">
-        Mula bacaan
-        <BookOpen className="ml-2 h-5 w-5" />
-      </button>
+      <Link to="/tadarus" className="hover:text-slate-900">
+        <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-md flex items-center transition-colors">
+          Mula bacaan
+          <BookOpen className="ml-2 h-5 w-5" />
+        </button>
+      </Link>
     </div>
   );
 }

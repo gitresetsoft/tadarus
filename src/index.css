@@ -68,3 +68,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 60vw;
+    height: 60vh;
+    padding: 0;
+  }
+}
