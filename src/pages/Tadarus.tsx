@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Trash2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Trash2,PlusCircle } from "lucide-react";
 
 const Tadarus = () => {
-  const [qariList, setQariList] = useState<{ name: string; start: number; end: number }[]>([]);
+  const navigate = useNavigate();
+  
+  const [qariList, setQariList] = 
+    useState<{ name: string; start: number; end: number }[]>([
+      { name: "", start: 1, end: 30 }
+    ]);
   const remainingJuz = 30 - (qariList.length > 0 ? qariList[qariList.length - 1].end : 0);
   const canAddQari = remainingJuz > 0 && (qariList.length === 0 || qariList[qariList.length - 1].name.trim() !== "");
 
@@ -29,13 +35,15 @@ const Tadarus = () => {
 
   const startTadarus = () => {
     console.log("Tadarus started", qariList);
+    navigate("/tracking", { state: { qariList } });
   };
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-4">Tadarus</h1>
 
-      <div className="bg-white shadow-md rounded-lg p-6 text-black">
+      <div className="shadow-md rounded-lg p-6 text-black bg-white/30
+      backdrop-filter backdrop-blur-sm">
         <div className="text-right mb-4">
           <span className="text-2xl font-bold text-blue-400">{remainingJuz} Juzu' Remaining</span>
         </div>
@@ -44,14 +52,14 @@ const Tadarus = () => {
           <div key={index} className="flex gap-4 items-center mb-4">
             <input
               type="text"
-              className="w-1/2 px-3 py-2 border rounded-md shadow-sm"
+              className="w-1/3 px-3 py-2 border rounded-md shadow-sm"
               placeholder="Enter Qari name"
               value={qari.name}
               onChange={(e) => updateQari(index, "name", e.target.value)}
               disabled={index < qariList.length - 1}
             />
 
-            <div className="w-1/2 flex flex-col">
+            <div className={`w-1/2 flex flex-col`}>
               <span className="text-sm font-medium text-gray-700">
                 Juzu' {qari.start} - {qari.end}
               </span>
@@ -65,30 +73,41 @@ const Tadarus = () => {
               />
             </div>
 
-            {index > 0 && (
-              <button onClick={() => removeQari(index)} className="p-2 text-red-600 hover:text-red-800">
+            {index < qariList.length - 1 ? (
+              <button 
+                onClick={() => removeQari(index)} 
+                className="flex items-center gap-2 p-2 text-red-600 hover:text-red-800"
+              >
                 <Trash2 size={18} />
+                <span className="text-sm">Remove Qari</span>
               </button>
+            ) : (
+              remainingJuz > 0 && (
+                <button
+                  onClick={addQari}
+                  className="flex items-center gap-2 p-2 text-green-600 hover:text-green-800"
+                >
+                  <PlusCircle size={18} />
+                  <span className="text-sm">Add Qari</span>
+                </button>
+              )
             )}
+
           </div>
         ))}
 
-        {remainingJuz !== 0 ? (
-          <button
-          type="button"
-          onClick={addQari}
-          className="w-full mt-4 py-2 px-4 border shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-          >
-            Add Qari
-          </button>
-        ) : ''}
-          <button
-            type="button"
-            onClick={startTadarus}
-            className="w-full mt-4 py-2 px-4 border shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700"
-          >
-            Start Tadarus
-          </button>
+        {qariList.length > 0 && qariList[qariList.length - 1].name.trim() !== "" && remainingJuz === 0 && (
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={startTadarus}
+              className="w-1/4 mt-4 py-2 px-4 border shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700"
+            >
+              Start Tadarus
+            </button>
+          </div>
+        )}
+        
       </div>
     </div>
   );

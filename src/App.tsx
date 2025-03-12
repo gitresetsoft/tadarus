@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Content from './Components/Content'
 import Navbar from './Components/Navbar'
 import { clouds_bg } from './Assets/_indexAssets';
-import { About, Tadarus, Reference } from './Pages/_indexPages';
+import { About, Tadarus, Reference, Tracking, Error404 } from './Pages/_indexPages';
 
 function App() {
 
@@ -25,6 +25,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/tadarus" element={<Tadarus />} />
           <Route path="/reference" element={<Reference />} />
+          <Route path="/tracking" element={<Tracking />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
         
         <Navbar />
