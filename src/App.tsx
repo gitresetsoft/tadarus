@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Content from './components/Content'
 import Navbar from './components/Navbar'
 import { clouds_bg } from './assets/_indexAssets';
-import { About, Tadarus, Reference } from './pages/_indexPages';
+import { About, Tadarus, Reference, Tracking, Error404 } from './pages/_indexPages';
 
 function App() {
 
@@ -19,15 +19,17 @@ function App() {
         />
       </div>
       <main className="absolute inset-0 flex flex-col items-center justify-center">
-        <Content />
 
-        <Navbar />
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/" element={<Content />} />
           <Route path="/about" element={<About />} />
           <Route path="/tadarus" element={<Tadarus />} />
           <Route path="/reference" element={<Reference />} />
+          <Route path="/tracking" element={<Tracking />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
+        
+        <Navbar />
       </main>
     </>
   );  
