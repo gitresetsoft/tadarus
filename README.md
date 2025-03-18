@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# 📖 Tadarus Tracker
+**Tadarus Tracker** – Helping communities complete the Quran together. 🤲✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tadarus Tracker is a web application designed to help groups track their Quran recitation (Tadarus) progress collaboratively. Users can log recitations, monitor group milestones, and stay motivated through a structured tracking system.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📌 **User Authentication** – Secure sign-in and account management.
+- 📖 **Recitation Tracking** – Log individual and group progress.
+- 📊 **Progress Dashboard** – Visualize milestones and completion rates.
+- 📅 **Session History** – View past recitations and reflections.
+- 📸 **Image Uploads** – Attach images as proof of recitation.
+- 🌙 **Dark Mode Support** – Seamless night-time reading experience.
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** [TypeScript](https://www.typescriptlang.org/), [ReactJS](https://react.dev/), [Vite](https://vitejs.dev/)
+- **Backend:** [NodeJS](https://nodejs.org/en)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation
+
+```sh
+git clone https://github.com/your-username/tadarus-tracker.git
+cd tadarus-tracker
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌍 Deployment:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run build
 ```
+Locate the builds in ```/dist``` folder and deploy wherever 🚀
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create a new branch (`feat/new-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feat/new-feature`).
+5. Open a Pull Request.
+
+## 📌 Roadmap
+- ✅ Prepare a Landing Page  
+- ✅ Group Creation & Management 
+- ⏳ Implement User Authentication  
+- ⏳ Quran Recital Logging & Calculation  
+- 🚀 Image Upload for Tracking Submission  
+- 🚀 Rebrand Landing Page and UI Theme  
+- 🚀 Notification System  
+- 🔜 Assignment Feature & Visualisation  
+- 🔜 Audio Recital Submission  
+- 🔜 i18n Translation (Malay & English)
+
+
+## 📬 Contact
+
+For inquiries, open an issue or reach out to me!~
+
+---
