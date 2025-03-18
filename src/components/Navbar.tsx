@@ -6,7 +6,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto bg-white/5 backdrop-blur-md border border-white/20 shadow-lg rounded-xl flex flex-col md:flex-row items-center justify-between p-3">
         <div className="mb-4 md:mb-0">
           {/* <Link to="/" className="flex items-center"> */}
-            <span className="text-xl font-serif font-semibold text-slate-800">
+            <span className="text-xl font-semibold text-slate-800">
               Tadarus
               <span className="text-xs block text-center">
                 Dibawa oleh:  

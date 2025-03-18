@@ -2,10 +2,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 // import { useState } from 'react'
-import Content from './Components/Content'
-import Navbar from './Components/Navbar'
-import { clouds_bg } from './Assets/_indexAssets';
-import { About, Tadarus, Reference, Tracking, Error404 } from './Pages/_indexPages';
+import Content from './components/Content'
+import Navbar from './components/Navbar'
+import { clouds_bg } from './assets/_indexAssets';
+import { About, Tadarus, Reference, Tracking, Error404 } from './pages/_indexPages';
 
 function App() {
 

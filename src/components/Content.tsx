@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Content() {
   return (
     <div className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20 md:pt-40 md:pb-32 fade-in-static">
-      <h1 className="text-5xl md:text-7xl font-serif text-slate-800 mb-4">
+      <h1 className="text-5xl md:text-7xl text-slate-800 mb-4">
         Mudahkan Tadarus Anda💖
       </h1>
       <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-md">
